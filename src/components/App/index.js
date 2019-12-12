@@ -12,35 +12,8 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 
 import * as ROUTES from '../../constants/routes';
-// import { withFirebase } from '../Firebase';
 import { withAuthentication } from '../Session';
-// import { AuthUserContext } from '../Session';
 
-// class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     authUser: null,
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   this.listener = this.props.firebase.auth.onAuthStateChanged(
-  //     authUser => {
-  //       authUser
-  //         ? this.setState({ authUser })
-  //         : this.setState({ authUser: null });
-  //       },
-  //   );
-  // }
-
-  // componentWillUnmount() {
-  //   this.listener();
-  // }
-
-  // render() {
-  //   return (
-      // <AuthUserContext.Provider value={this.state.authUser}>
     const App = () => (
       <Router>
         <div>
@@ -58,10 +31,4 @@ import { withAuthentication } from '../Session';
         </div>
       </Router>
     );
-      // {/* </AuthUserContext.Provider> */}
-
-    // );
-//   }
-// }
-
 export default withAuthentication(App);
