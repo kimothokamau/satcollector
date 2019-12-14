@@ -5,12 +5,13 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
+
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
+    {/* <h1>SignIn</h1> */}
     <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
   </div>
 );
 const INITIAL_STATE = {
@@ -43,26 +44,54 @@ class SignInFormBase extends Component {
     const { email, password, error } = this.state;
     const isInvalid = password === '' || email === '';
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-        {error && <p>{error.message}</p>}
-      </form>
+      <Container>
+        <Form onSubmit={this.onSubmit}>
+        <Row>
+            <Col md={6}>
+              <FormGroup>
+                <Label for="exampleEmail">Email</Label>
+                <Input type="email" name="email" value={email} onChange={this.onChange} id="exampleEmail" placeholder="Email address" />
+              </FormGroup>
+            </Col>
+            <Col md={6}>
+              <FormGroup>
+                <Label for="examplePasswordOne">Password</Label>
+                <Input type="password" name="password" value={password} onChange={this.onChange} id="examplePasswordOne" placeholder="Password" />
+              </FormGroup>
+            </Col>
+          </Row>
+          <Button
+          primary disabled={isInvalid} type="submit" color="primary" size="lg">
+              Sign In
+          </Button>
+          <FormGroup>
+            <PasswordForgetLink />
+          </FormGroup>
+          <FormGroup>
+            <SignUpLink />
+          </FormGroup>
+        </Form>
+      </Container>
+      // <form onSubmit={this.onSubmit}>
+      //   <input
+      //     name="email"
+      //     value={email}
+      //     onChange={this.onChange}
+      //     type="text"
+      //     placeholder="Email Address"
+      //   />
+      //   <input
+      //     name="password"
+      //     value={password}
+      //     onChange={this.onChange}
+      //     type="password"
+      //     placeholder="Password"
+      //   />
+      //   <button disabled={isInvalid} type="submit">
+      //     Sign In
+      //   </button>
+      //   {error && <p>{error.message}</p>}
+      // </form>
     );
   }
 }

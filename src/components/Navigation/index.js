@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import SignOutButton from '../SignOut';
@@ -6,49 +6,72 @@ import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
 
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
 
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
 
 const NavigationNonAuth = () => {
-  const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+  
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Create Account
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
+    <div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">SatCollector</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav pills className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/buybitcoin/">BuyBitcoin</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/about/">About Us</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/blog/">Blog</NavLink>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Wallets
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  Bitcoin wallet
+                </DropdownItem>
+                <DropdownItem>
+                  Ethereum wallet
+                </DropdownItem>
+                <DropdownItem>
+                  KSH wallet
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </Nav>
+          <NavbarText>
+          <NavLink href="/signin/">Log In</NavLink>
+          </NavbarText>
+        </Collapse>
+      </Navbar>
     </div>
   );
 }
 
-
 const Navigation = () => (
+  
   <div>
     <AuthUserContext.Consumer>
       {authUser =>
@@ -58,33 +81,52 @@ const Navigation = () => (
   </div>
 );
 
-const NavigationAuth = () => (
-  <ul>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.HOME}>Home</Link>
-    </li>
-    <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
-    <li>
-      <SignOutButton />
-    </li>
-  </ul>
-);
+const NavigationAuth = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-// const NavigationNonAuth = () => (
-//   <ul>
-//     <li>
-//       <Link to={ROUTES.LANDING}>Landing</Link>
-//     </li>
-//     <li>
-//       <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-//     </li>
-//   </ul>
-// );
+  const toggle = () => setIsOpen(!isOpen);
+  
+  return (
+    <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">SatCollector</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav pills className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/buybitcoin/">BuyBitcoin</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/about/">About Us</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/blog/">Blog</NavLink>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Wallets
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  Bitcoin wallet
+                </DropdownItem>
+                <DropdownItem>
+                  Ethereum wallet
+                </DropdownItem>
+                <DropdownItem>
+                  KSH wallet
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </Nav>
+          <NavbarText>
+          <NavLink href="/signin/">Log In</NavLink>
+          </NavbarText>
+        </Collapse>
+      </Navbar>
+  );
+};
+
+
 
 
 export default Navigation;
