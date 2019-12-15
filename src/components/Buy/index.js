@@ -54,7 +54,7 @@ class BuyPage extends React.Component {
             <br/>
             <br/>
             <Row form>
-            <Col md={6}>
+            <Col md={5}>
             {/* <h3 className={`currency-flag ${currencyA.code}`}>{currencyA.name}</h3> */}
             <h3> I want to spend </h3>
             <InputGroup>
@@ -66,8 +66,8 @@ class BuyPage extends React.Component {
                 <InputGroupAddon addonType="prepend">{currencyA.code}</InputGroupAddon>
             </InputGroup>
             </Col>
-
-            <Col md={6}>
+            
+            <Col md={5}>
             {/* <h3 className={`currency-flag ${currencyB.code}`}>{currencyB.name}</h3> */}
             <h3> To buy bitcoins </h3>
             <InputGroup>
