@@ -101,7 +101,10 @@ const NavigationAuth = () => {
             <NavItem>
               <NavLink href="/blog/">Blog</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <NavItem>
+              <NavLink href="/wallet/">Wallet</NavLink>
+            </NavItem>
+            {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Wallets
               </DropdownToggle>
@@ -113,7 +116,7 @@ const NavigationAuth = () => {
                   Ksh wallet
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> */}
           </Nav>
           <NavbarText>
           <NavLink href="/signin/">Log In</NavLink>

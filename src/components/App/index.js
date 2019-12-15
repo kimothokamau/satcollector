@@ -11,6 +11,7 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import BuyPage from '../Buy';
+import WalletPage from '../Wallet';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -30,6 +31,7 @@ import { withAuthentication } from '../Session';
           <Route exact path={ROUTES.BUY} component={BuyPage} />
           <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
           <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+          <Route exact path={ROUTES.WALLET} component={WalletPage} />
         </div>
       </Router>
     );
