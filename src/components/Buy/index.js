@@ -51,6 +51,8 @@ class BuyPage extends React.Component {
                <Col sm="12" md={{ size: 6, offset: 3 }}><h2>Buy bitcoins via M-Pesa</h2></Col>
             </Row>
             <br/>
+            <br/>
+            <br/>
             <Row form>
             <Col md={6}>
             {/* <h3 className={`currency-flag ${currencyA.code}`}>{currencyA.name}</h3> */}
@@ -77,6 +79,16 @@ class BuyPage extends React.Component {
             </Col>
             </Row>
             <br/>
+            <br/>
+            <Row form>
+             <Col md={4}>
+                <FormGroup>
+                    <Label for="mpesa">M-Pesa Number</Label>
+                    <Input type="number" name="mpesa" id="mpesa" placeholder="07XXXXXXXX" />
+                </FormGroup>
+             </Col>
+            </Row>
+            
             <FormGroup>
                 
             <Button type="submit" color="primary" size="lg">
