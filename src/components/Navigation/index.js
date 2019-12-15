@@ -110,9 +110,6 @@ const NavigationAuth = () => {
                   Bitcoin wallet
                 </DropdownItem>
                 <DropdownItem>
-                  Ethereum wallet
-                </DropdownItem>
-                <DropdownItem>
                   KSH wallet
                 </DropdownItem>
               </DropdownMenu>

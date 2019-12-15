@@ -10,12 +10,13 @@ import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reac
 
 
 const SignUpPage = () => (
-  <div>
+  <Container>
     <h1>
         Sign Up
-      </h1>
-      <SignUpForm />
-  </div>
+    </h1>
+    <br/>
+    <SignUpForm />
+  </Container>
 );
 
 
@@ -73,11 +74,15 @@ class SignUpFormBase extends Component {
       return (
         <Container>
           <Form onSubmit={this.onSubmit}>
+          {/* <Row>
+            <Col sm="12" md={{ size: 6, offset: 3 }}>Sign Up</Col>
+          </Row> */}
           <Row form>
             <Col md={6}>
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
                 <Input type="email" name="email" value={email} onChange={this.onChange} id="exampleEmail" placeholder="Email address" />
+
               </FormGroup>
             </Col>
             <Col md={6}>
