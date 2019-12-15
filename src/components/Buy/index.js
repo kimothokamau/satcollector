@@ -2,6 +2,7 @@ import React from 'react';
 import data from './data/Data'
 import { Container, Col, Row, Button, Form, FormGroup, Label, Input, FormFeedback, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 
+
 class BuyPage extends React.Component {
 
   constructor(props){
@@ -47,12 +48,13 @@ class BuyPage extends React.Component {
         <Container>
             <Form>
             <Row>
-               <Col sm="12" md={{ size: 6, offset: 3 }}><h2>Enter the amount you wish to buy</h2></Col>
+               <Col sm="12" md={{ size: 6, offset: 3 }}><h2>Buy bitcoins via M-Pesa</h2></Col>
             </Row>
             <br/>
             <Row form>
             <Col md={6}>
-            <h3 className={`currency-flag ${currencyA.code}`}>{currencyA.name}</h3>
+            {/* <h3 className={`currency-flag ${currencyA.code}`}>{currencyA.name}</h3> */}
+            <h3> I want to spend </h3>
             <InputGroup>
                 <InputGroupAddon addonType="prepend">{currencyA.code}</InputGroupAddon>
                 <Input placeholder="Amount of Ksh" min={0} max={100000} type="number" step="1" value={currencyAval} pattern="\d\.\d{2}" onChange={(e) => 
@@ -63,7 +65,8 @@ class BuyPage extends React.Component {
             </Col>
 
             <Col md={6}>
-            <h3 className={`currency-flag ${currencyB.code}`}>{currencyB.name}</h3>
+            {/* <h3 className={`currency-flag ${currencyB.code}`}>{currencyB.name}</h3> */}
+            <h3> To get these bitcoins </h3>
             <InputGroup>
                 <InputGroupAddon addonType="prepend">{currencyB.code}</InputGroupAddon>
                 <Input placeholder="Amount of bitcoins" min={0} max={1000} type="number" step="1" value={currencyBval} pattern="\d\.\d{2}" onChange={(e) => {
@@ -79,7 +82,21 @@ class BuyPage extends React.Component {
             <Button type="submit" color="primary" size="lg">
               BUY
             </Button>
-          </FormGroup>
+            </FormGroup>
+            <br/>
+            <Row>
+            <Col md={6}>
+               <p>
+                 Exchange Rate: {`${currencyA.sellRate} ${currencyA.code}`} = {`${currencyB.sellRate} ${currencyB.code}`}
+               </p>
+            </Col>
+
+            <Col md={6}>
+               <p>
+                 Exchange Rate: 1 {currencyB.code} = {`${currencyA.buyRate} ${currencyA.code}`}
+               </p>
+            </Col>
+            </Row>
             </Form>
             
 
