@@ -7,3 +7,5 @@ export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const BUY = '/buybitcoin';
 export const WALLET = '/wallet';
+export const ABOUT = '/about';
+export const BLOG = '/blog';
