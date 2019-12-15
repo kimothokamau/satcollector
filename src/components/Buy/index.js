@@ -58,23 +58,25 @@ class BuyPage extends React.Component {
             {/* <h3 className={`currency-flag ${currencyA.code}`}>{currencyA.name}</h3> */}
             <h3> I want to spend </h3>
             <InputGroup>
-                <InputGroupAddon addonType="prepend">{currencyA.code}</InputGroupAddon>
+                
                 <Input placeholder="Amount of Ksh" min={0} max={100000} type="number" step="1" value={currencyAval} pattern="\d\.\d{2}" onChange={(e) => 
                   {this.onChangeHandler(e, 'A');
                 }}/>
-                <InputGroupAddon addonType="append">.00</InputGroupAddon>
+                {/* <InputGroupAddon addonType="append">.00</InputGroupAddon> */}
+                <InputGroupAddon addonType="prepend">{currencyA.code}</InputGroupAddon>
             </InputGroup>
             </Col>
 
             <Col md={6}>
             {/* <h3 className={`currency-flag ${currencyB.code}`}>{currencyB.name}</h3> */}
-            <h3> To get these bitcoins </h3>
+            <h3> To buy bitcoins </h3>
             <InputGroup>
-                <InputGroupAddon addonType="prepend">{currencyB.code}</InputGroupAddon>
+                
                 <Input placeholder="Amount of bitcoins" min={0} max={1000} type="number" step="1" value={currencyBval} pattern="\d\.\d{2}" onChange={(e) => {
                   this.onChangeHandler(e, 'B');
                   }}  />
-                <InputGroupAddon addonType="append">.00</InputGroupAddon>
+                {/* <InputGroupAddon addonType="append">.00</InputGroupAddon> */}
+                <InputGroupAddon addonType="prepend">{currencyB.code}</InputGroupAddon>
             </InputGroup>
             </Col>
             </Row>
@@ -84,7 +86,7 @@ class BuyPage extends React.Component {
              <Col md={4}>
                 <FormGroup>
                     <Label for="mpesa">M-Pesa Number</Label>
-                    <Input type="number" name="mpesa" id="mpesa" placeholder="07XXXXXXXX" />
+                    <Input type="tel" maxlength="10" minLength="10" name="mpesa" id="mpesa" placeholder="07XXXXXXXX" />
                 </FormGroup>
              </Col>
             </Row>

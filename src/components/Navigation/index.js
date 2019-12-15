@@ -92,18 +92,20 @@ const NavigationAuth = () => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav pills className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/buybitcoin/">BuyBitcoin</NavLink>
-            </NavItem>
+            
             <NavItem>
               <NavLink href="/about/">About Us</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/blog/">Blog</NavLink>
+              <NavLink href="/buybitcoin/">BuyBitcoin</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/wallet/">Wallet</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/blog/">Blog</NavLink>
+            </NavItem>
+            
             {/* <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Wallets
