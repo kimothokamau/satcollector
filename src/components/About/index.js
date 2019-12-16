@@ -4,7 +4,7 @@ import { Container, Spinner } from 'reactstrap';
 const AboutPage = (props) => {
   return (
       <Container className="themed-container" fluid={true}>
-          <h1> Coming Soon </h1>
+          <h3> Coming Soon </h3>
           <div>
             <Spinner type="grow" color="primary" />
             <Spinner type="grow" color="secondary" />

@@ -1,15 +1,15 @@
 const data = {
     "currencies": [
         {
-            "code": "KES",
+            "code": "KSH",
             "sellRate": 1,
-            "buyRate" : 806451,
+            "buyRate" : 750451,
             "name": "Kenyan Shilling",
-            "sign": "KES"
+            "sign": "KSH"
         },
         {
             "code": "BTC",
-            "sellRate": 0.00000124,
+            "sellRate": 0.00000133,
             "name": "Bitcoins",
             "sign": "₿"
         },

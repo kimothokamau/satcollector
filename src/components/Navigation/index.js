@@ -26,49 +26,36 @@ const NavigationNonAuth = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-  
+
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">SatCollector</NavbarBrand>
+    <Navbar color="light" light expand="md">
+        <NavbarBrand href="/buybitcoin">SatCollector</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav pills className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/buybitcoin/">BuyBitcoin</NavLink>
-            </NavItem>
+            
             <NavItem>
               <NavLink href="/about/">About Us</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="/buybitcoin/">Buy bitcoin</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/wallet/">Wallet</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="/blog/">Blog</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Wallets
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Bitcoin wallet
-                </DropdownItem>
-                <DropdownItem>
-                  Ethereum wallet
-                </DropdownItem>
-                <DropdownItem>
-                  KSH wallet
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
           </Nav>
           <NavbarText>
           <NavLink href="/signin/">Log In</NavLink>
           </NavbarText>
         </Collapse>
       </Navbar>
-    </div>
+    
   );
-}
+};
 
 const Navigation = () => (
   
@@ -88,7 +75,7 @@ const NavigationAuth = () => {
   
   return (
     <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">SatCollector</NavbarBrand>
+        <NavbarBrand href="/buybitcoin/">SatCollector</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav pills className="mr-auto" navbar>
@@ -97,7 +84,7 @@ const NavigationAuth = () => {
               <NavLink href="/about/">About Us</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/buybitcoin/">BuyBitcoin</NavLink>
+              <NavLink href="/buybitcoin/">Buy bitcoin</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/wallet/">Wallet</NavLink>
@@ -105,20 +92,6 @@ const NavigationAuth = () => {
             <NavItem>
               <NavLink href="/blog/">Blog</NavLink>
             </NavItem>
-            
-            {/* <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Wallets
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Bitcoin wallet
-                </DropdownItem>
-                <DropdownItem>
-                  Ksh wallet
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown> */}
           </Nav>
           <NavbarText>
           <NavLink href="/signin/">Log In</NavLink>

@@ -82,14 +82,6 @@ class BuyPage extends React.Component {
             </Row>
             <br/>
             <br/>
-            <Row form>
-             <Col md={4}>
-                <FormGroup>
-                    <Label for="mpesa">M-Pesa Number</Label>
-                    <Input type="tel" maxlength="10" minLength="10" name="mpesa" id="mpesa" placeholder="07XXXXXXXX" />
-                </FormGroup>
-             </Col>
-            </Row>
             
             <FormGroup>
                 
