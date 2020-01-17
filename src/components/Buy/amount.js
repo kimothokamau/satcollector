@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NumberFormat from 'react-number-format';
 import data from './data/Data'
 import { Container, Col, Row, Button, Form, FormGroup, Label, Input, FormFeedback, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 
@@ -7,39 +6,30 @@ import { Container, Col, Row, Button, Form, FormGroup, Label, Input, FormFeedbac
 // class BuyPage extends React.Component {
 export class BuyPage extends Component {
 
-  // constructor(props){
-  //   super(props);
-
     state = {
       currencyA: data.currencies[0],
       currencyB: data.currencies[1],
-      currencyAval: data.currencies[0].initial,
-      currencyBval: data.currencies[1].initial
+      currencyAval: data.currencies[0].sellRate,
+      currencyBval: data.currencies[1].sellRate
     }
-
-  // }
 
   onChangeHandler(e, currency){
 
-    const {currencyA} = this.state;
-    const kshformat = (x) => Number.parseFloat(x).toFixed(2);
-    const btcformat = (x) => Number.parseFloat(x).toFixed(8);
-
+    const {currencyB} = this.state;
 
     if(currency === 'A'){
       
       const newValueA = e.target.value;
-      // roundTo(newValueA, 2)
       this.setState({
         currencyAval: newValueA,
-        currencyBval: btcformat(newValueA / currencyA.buyRate)
+        currencyBval: newValueA * currencyB.sellRate
       })
 
     } else if(currency === 'B'){
       
       const newValueB = e.target.value;
       this.setState({
-        currencyAval: kshformat(newValueB * currencyA.buyRate),
+        currencyAval: newValueB / currencyB.sellRate,
         currencyBval: newValueB
       })
 
@@ -67,7 +57,7 @@ export class BuyPage extends Component {
 
             <InputGroup>
                 
-                <Input placeholder="Amount of Ksh" step="0.01" value ={currencyAval} type={Number} onChange={(e) => 
+                <Input placeholder="Amount of Ksh" min={0} max={100000} type="number" step="any" value={currencyAval}  onChange={(e) => 
                   {this.onChangeHandler(e, 'A');
                 }}/>
                 <InputGroupAddon addonType="prepend">{currencyA.code}</InputGroupAddon>
@@ -81,10 +71,9 @@ export class BuyPage extends Component {
   
           <InputGroup>
               
-              <Input placeholder="Amount of bitcoins" max={1000} step="any" value={currencyBval} type= {Number} onChange={(e) => {
+              <Input placeholder="Amount of bitcoins" max={1000} type="number" step="any" value={currencyBval}  onChange={(e) => {
                 this.onChangeHandler(e, 'B');
                 }}  />
-    
               <InputGroupAddon addonType="prepend">{currencyB.code}</InputGroupAddon>
           </InputGroup>
           </Col>

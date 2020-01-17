@@ -34,18 +34,11 @@ const NavigationNonAuth = () => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav pills className="mr-auto" navbar>
-            
-            <NavItem>
-              <NavLink href="/about/">About Us</NavLink>
-            </NavItem>
             <NavItem>
               <NavLink href="/buybitcoin/">Buy bitcoin</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/wallet/">Wallet</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/blog/">Blog</NavLink>
             </NavItem>
           </Nav>
           <NavbarText>
@@ -75,14 +68,10 @@ const NavigationAuth = () => {
   
   return (
     <Navbar color="light" light expand="md">
-        <NavbarBrand href="/buybitcoin/">SatCollector</NavbarBrand>
+        <NavbarBrand href="/buybitcoin/">SATCOLLECTOR</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav pills className="mr-auto" navbar>
-            
-            <NavItem>
-              <NavLink href="/about/">About Us</NavLink>
-            </NavItem>
             <NavItem>
               <NavLink href="/buybitcoin/">Buy bitcoin</NavLink>
             </NavItem>
@@ -90,7 +79,7 @@ const NavigationAuth = () => {
               <NavLink href="/wallet/">Wallet</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/blog/">Blog</NavLink>
+              <NavLink href="/account/">Profile</NavLink>
             </NavItem>
           </Nav>
           <NavbarText>

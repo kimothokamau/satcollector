@@ -4,6 +4,7 @@ import { AuthUserContext, withAuthorization } from '../Session';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 // import { withAuthorization } from '../Session';
+import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 const AccountPage = () => (
@@ -17,6 +18,10 @@ const AccountPage = () => (
     )}
   </AuthUserContext.Consumer>
 );
+
+
+
+
 
 
 const condition = authUser => !!authUser;
