@@ -22,8 +22,12 @@ export class BuyPage extends Component {
   onChangeHandler(e, currency){
 
     const {currencyA} = this.state;
-    const kshformat = (x) => Number.parseFloat(x).toFixed(2);
-    const btcformat = (x) => Number.parseFloat(x).toFixed(8);
+    const kshformat = (x) => Number.parseFloat(x).toFixed(2).toLocaleString();
+    const btcformat = (x) => Number.parseFloat(x).toFixed(8).toLocaleString();
+
+    function currencyFormat(num) {
+      return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
 
 
     if(currency === 'A'){
@@ -39,7 +43,7 @@ export class BuyPage extends Component {
       
       const newValueB = e.target.value;
       this.setState({
-        currencyAval: kshformat(newValueB * currencyA.buyRate),
+        currencyAval: currencyFormat(newValueB * currencyA.buyRate),
         currencyBval: newValueB
       })
 
