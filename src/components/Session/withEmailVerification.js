@@ -3,7 +3,7 @@ import React from 'react';
 import AuthUserContext from './context';
 import { withFirebase } from '../Firebase';
 
-import { Button } from 'semantic-ui-react'
+import { Button } from 'reactstrap';
 
 const needsEmailVerification = authUser =>
   authUser &&
