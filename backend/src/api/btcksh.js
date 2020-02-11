@@ -32,7 +32,7 @@ app.get('/rate', (request, response) => {
     const usdkesApi = responses[1].data
     const btcusdprice = Object.values(btcusdApi);
     const usdkesprice = Object.values(usdkesApi);
-    const btckes = parseInt(currencyFormat(btcusdprice * usdkesprice))
+    const btckes = parseFloat(currencyFormat(btcusdprice * usdkesprice))
     // console.log('BTCKES:', btckes)
     // return response.send(btckes)
     // return response.json({ rate: btckes })
