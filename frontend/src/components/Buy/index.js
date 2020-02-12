@@ -42,7 +42,7 @@ export class BuyPage extends Component {
     const btcformat = (x) => Number.parseFloat(x).toFixed(8).toLocaleString();
 
     function currencyFormat(num) {
-      return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+      return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
 
 
