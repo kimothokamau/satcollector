@@ -1,17 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Demo
 
-satcollector.com
+A demo runs on https://satcollector.com
 
 
-## Available Scripts
+## To run this on your local PC
 
-In the project directory, you can run:
+Git clone the project repo:
+Navigate to frontend directory and run `npm start`
+Navigate to backend directory and run `npm start`
 
-### `npm start`
-
-Runs the app in the development mode.<br />
+The app will run in development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
