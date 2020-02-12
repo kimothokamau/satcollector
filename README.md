@@ -1,7 +1,7 @@
 
 ## Demo
 
-A demo runs on https://satcollector.com . However it currently lags the development version. 
+A demo runs on https://satcollector.com . However the demo currently lags behind the development version. 
 
 
 ## To run this on your local PC
