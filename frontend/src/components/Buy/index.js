@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import pesa from './data/Data';
 import { Container, Col, Row, Button, Form, FormGroup, Label, Input,InputGroup, InputGroupAddon} from 'reactstrap';
+import {btckesapiurl} from '../../config'; 
+
+
 
 export class BuyPage extends Component {
 
@@ -20,12 +23,7 @@ export class BuyPage extends Component {
 
   /// Using fetch /techiediaries
   componentDidMount () {
-    fetch('http://localhost:3001/rate',{
-    headers : {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-    }
-      })
+    fetch(`${btckesapiurl}$/rate`)
       .then(response => response.json())
       .then((data) => {
         this.setState({ rate: data.btckes });
